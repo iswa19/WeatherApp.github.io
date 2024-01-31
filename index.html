@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/Logo Files/For Web/png/tab icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./small.css">
+  <link rel="stylesheet" href="./large-screen.css">
+  <link rel="stylesheet" href="./mobile.css">
+  <link rel="stylesheet" href="./desktop.css">
+  <link rel="stylesheet" href="./tablet.css">
+  <title>Weather Updates</title>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="current-update">
+      <!-----------------Navbar Start here------------->
+      <div class="nav-bar">
+        <!-------------website logo---------------->
+        <div class="logo">
+          <img src="./images/Logo Files/For Web/png/White logo - no background.png" alt="" width="250px" height="80px" id="logo-icon">
+        </div>
+        <!-------------Select box to select cities------------>
+        <div class="search">
+          <input type="text" placeholder="--Enter City--" class="search-box" id="city">
+          <button onclick="getWeather()" class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></button>
+        </div>
+      </div>
+      <!-----------------Navbar End here------------->
+      <div class="city-name">
+         <span id="cty-name">London</span><span>,</span><span id="country-name">UK</span>
+       </div>
+       <!--current weather section start-->
+       <div class="current">
+         <!--logo of current weather-->
+          <div class="current-icon">
+             <img src="./images/icons/sun.png" alt="" width="100px" height="100px" id="current-icn">
+          </div>
+          <!--current temprature-->
+          <div class="current-temp">
+            <span id="current-temperature">21</span><span><sup>o</sup>C</span><br>
+            <small id="current-temp-des">Mostly sunny</small>
+          </div>
+         <!-- details of current weather-->
+        <div class="current-detail">
+            <!-- first row------>
+            <div class="detail-1">
+                <div class="current-high">
+                    <h3 id="high-temp">23</h3>
+                    <small>High</small>
+                 </div>
+                 <div class="current-wind">
+                    <h3 id="wind">7mph</h3>
+                    <small>Wind</small>
+                 </div>
+                 <div class="current-sunrise">
+                    <h3 id="sun-rise">05:27</h3>
+                    <small>Sunrise</small>
+                 </div> 
+            </div>
+            <!--second row------>
+            <div class="detail-2">
+                <div class="current-low">
+                    <h3 id="low-temp">14</h3>
+                    <small>Low</small>
+                 </div>
+                 <div class="current-humidity">
+                    <h3 id="humidity">0%</h3>
+                    <small>humidity</small>
+                 </div>
+                 <div class="current-sunset">
+                    <h3 id="sun-set">20:57</h3>
+                    <small>Sunset</small>
+                 </div> 
+            </div>
+        </div>
+     </div>  
+        <!--current weather section end-->
+   
+         <!--hourly weather section-->
+           <div class="today">
+            <div class="today-heading">
+                <h1 class="today-head">Today's Weather</h1>
+                <div class="border-botom"> </div>
+             </div>
+             <div class="today-weather">
+                <div class="six-am time">
+                    <h2>06:00 AM</h2>
+                     <img src="./images/icons/clear-day.png" alt="">
+                    <h2>20<sup>o</sup>C</h2>
+                </div>
+                <div class="nine-am time">
+                    <h2>09:00 AM</h2>
+                    <img src="./images/icons/rain.png" alt="">
+                    <h2>20<sup>o</sup>C</h2> 
+                </div>
+                <div class="twelve-pm time"> 
+                    <h2>12:00 PM</h2>
+                    <img src="./images/icons/cloudy.png" alt="">
+                    <h2>20<sup>o</sup>C</h2> 
+                </div>
+                <div class="three-pm time">
+                    <h2>03:00 PM</h2>
+                    <img src="./images/icons/cloudy.png" alt="">
+                    <h2>20<sup>o</sup>C</h2> 
+                </div>
+                <div class="six-pm time">
+                    <h2>06:00 PM</h2>
+                    <img src="./images/icons/clear-night.png" alt="">
+                    <h2>20<sup>o</sup>C</h2> 
+                </div>
+                <div class="nine-pm time">
+                    <h2>09:00 PM</h2>
+                    <img src="./images/icons/clear-night.png" alt="">
+                    <h2>20<sup>o</sup>C</h2> 
+                </div>
+             </div>
+         </div>
+    </div>
+
+         <!--weekly weather section-->
+    <div class="weekly-update">
+      <div class="week-heading">
+              <h1>5-DAY FORECAST</h1>
+              <div class="border-bot"></div>
+      </div>
+      <div class="week-container">
+       <div class="week-days">
+         <div class="day-name">
+          <h2>Monday</h2>
+         </div>
+         <div class="week-icon">
+            <img src="./images/icons/rain-snow-showers-day.png" alt="">
+         </div>
+         <div class="week-temp">
+          <h2>20<sup>o</sup>C</h2>
+         </div>
+       </div>
+
+       <div class="week-days">
+         <div class="day-name">
+          <h2>Tuesday</h2>
+         </div>
+         <div class="week-icon">
+            <img src="./images/icons/clear-day.png" alt="">
+         </div>
+         <div class="week-temp">
+          <h2>20<sup>o</sup>C</h2>
+         </div>
+  
+       </div>
+       <div class="week-days">
+         <div class="day-name">
+          <h2>Wednesday</h2>
+         </div>
+         <div class="week-icon">
+            <img src="./images/icons/cloudy.png" alt="">
+         </div>
+         <div class="week-temp">
+          <h2>20<sup>o</sup>C</h2>
+         </div>
+  
+       </div>
+       <div class="week-days">
+         <div class="day-name">
+          <h2>Thursday</h2>
+         </div>
+         <div class="week-icon">
+            <img src="./images/icons/rain.png" alt="">
+         </div>
+         <div class="week-temp">
+          <h2>20<sup>o</sup>C</h2>
+         </div>
+  
+       </div>
+       <div class="week-days">
+         <div class="day-name">
+          <h2>Friday</h2>
+         </div>
+         <div class="week-icon">
+            <img src="./images/icons/thunder-showers-day.png" alt="">
+         </div>
+         <div class="week-temp">
+          <h2>20<sup>o</sup>C</h2>
+         </div>
+  
+       </div>
+       
+      </div>
+      </div>
+
+    
+  </div>
+
+                      <!--Jquery link-->
+<script src="./jquerry/code.jquery.com_jquery-3.7.0.min.js"></script>
+
+<script>
+      
+      function getWeather(){
+         var city = document.getElementById("city").value;
+      
+      $.ajax({
+          url: `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next5days?unitGroup=metric&include=hours%2Cdays%2Ccurrent&key=ESVGGVB9MU8NV7MBBPS5VGHUR&contentType=json`,
+          success: function(data){
+           $(".city-name").html(`
+           <span id="cty-name">${data['resolvedAddress']}</span>
+           `);
+
+           $(".current-icon").html(`
+           <img src="./images/icons/${data['currentConditions']['icon']}.png" alt="" width="100px" height="100px" id="current-icn">`);
+         
+         $(".current-temp").html(`
+               <span id="current-temperature">${data['currentConditions']['temp']}</span><span><sup>o</sup>C</span><br>
+               <small id="current-temp-des">${data['currentConditions']['conditions']}</small>`);
+         
+         $(".current-detail").html(`
+         <!-- first row------>
+               <div class="detail-1">
+                   <div class="current-high">
+                       <h3 id="high-temp">${data['days']['0']['tempmax']}</h3>
+                       <small>High</small>
+                    </div>
+                    <div class="current-wind">
+                       <h3 id="wind">${data['days']['0']['windspeed']}mph</h3>
+                       <small>Wind Speed</small>
+                    </div>
+                    <div class="current-sunrise">
+                       <h3 id="sun-rise">${data['days']['0']['sunrise']}</h3>
+                       <small>Sunrise</small>
+                    </div> 
+               </div>
+               <!--second row------>
+               <div class="detail-2">
+                   <div class="current-low">
+                       <h3 id="low-temp">${data['days']['0']['tempmin']}</h3>
+                       <small>low</small>
+                    </div>
+                    <div class="current-humidity">
+                       <h3 id="humidity">${data['days']['0']['humidity']}%</h3>
+                       <small>humidity</small>
+                    </div>
+                    <div class="current-sunset">
+                       <h3 id="sun-set">${data['days']['0']['sunset']}</h3>
+                       <small>Sunset</small>
+                    </div> 
+               </div>
+         `)
+         $(".today-heading").html(`
+         <h1 class="today-head">Today's Weather</h1>
+         <div class="border-botom"> </div>
+         `);
+         $(".week-heading").html(`
+             <h1>5-DAY FORECAST</h1>
+              <div class="border-bot"></div>
+          `);
+          //------hourly weather -----//
+         $(".today-weather").html(`
+         <div class="six-am time">
+                    <h2>${data['days']['0']['hours']['7']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['7']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['7']['temp']}<sup>o</sup>C</h2>
+                </div>
+                <div class="nine-am time">
+                    <h2>${data['days']['0']['hours']['9']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['9']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['9']['temp']}<sup>o</sup>C</h2> 
+                </div>
+                <div class="twelve-pm time"> 
+                  <h2>${data['days']['0']['hours']['12']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['12']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['12']['temp']}<sup>o</sup>C</h2> 
+                </div>
+                <div class="three-pm time">
+                  <h2>${data['days']['0']['hours']['15']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['15']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['15']['temp']}<sup>o</sup>C</h2> 
+                </div>
+                <div class="six-pm time">
+                  <h2>${data['days']['0']['hours']['18']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['18']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['18']['temp']}<sup>o</sup>C</h2> 
+                </div>
+                <div class="nine-pm time">
+                  <h2>${data['days']['0']['hours']['21']['datetime']}</h2>
+                    <img src="./images/icons/${data['days']['0']['hours']['21']['icon']}.png" alt="" width="60px" height="60px">
+                    <h2>${data['days']['0']['hours']['21']['temp']}<sup>o</sup>C</h2> 
+                </div>
+         `);
+        //------weekly weather cards loop-----//
+         $(".week-container").html("");
+         data.days.slice(1).forEach(day =>{
+            $(".week-container").append(`
+           <div class="week-days">
+             <div class="day-name">
+               <h2>${getDayName(day.datetime)}</h2>
+            </div>
+            <div class="week-icon">
+            <img src="./images/icons/${day['icon']}.png" alt="" width="70px" height="70px" id="current-icn">
+            </div>
+            <div class="week-temp">
+            <h2>${day['temp']}<sup>o</sup>C</h2>
+           </div>
+           </div> `);
+         });
+
+          //to change background image
+          if(data.currentConditions.icon=="clear-day"){  
+            $(".main").css({
+            'background-image' : 'url("./images/background-img/clear-day.jpg")',
+            })
+
+            $(".city-name").css({
+              'color' : 'white',
+           })
+           $(".current-temp").css({
+              'color' : 'white',
+           })
+           $("#current-temp-des").css({
+              'color' : 'white',
+           })
+           $(".current-detail").css({
+              'color' : 'white',
+              'border-left': '2px solid white'
+           })
+          
+            $(".week-days").css({
+              'color' : 'white',
+           })
+           $(".today-weather").css({
+              'color' : 'white',
+           })
+          }
+          else if(data.currentConditions.icon=="clear-night"){  
+            $(".main").css({
+            'background-image' : 'url("./images/background-img/clear-night.jpg")',
+            })
+            $(".week-days").css({
+              'color' : 'whitesmoke',
+           })
+           $(".today-weather").css({
+              'color' : 'whitesmoke',
+           })
+
+          }
+           else if(data.currentConditions.icon=="cloudy"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/clouds.jpg")',
+           })
+           $(".city-name").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $(".current-temp").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $("#current-temp-des").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $(".current-detail").css({
+              'color' : 'rgb(57, 57, 57)',
+              'border-left': '2px solid rgb(57, 57, 57)'
+           })
+          
+          }
+           else if(data.currentConditions.icon=="fog"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/fog.jpg")',
+           })
+           
+          }
+           else if(data.currentConditions.icon=="hail"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/hail.jpg")',
+           })
+          
+          }
+           else if(data.currentConditions.icon=="partly-cloudy-day"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/clouds.jpg")',
+           })
+           $(".city-name").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $(".current-temp").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $("#current-temp-des").css({
+              'color' : 'rgb(57, 57, 57)',
+           })
+           $(".current-detail").css({
+              'color' : 'rgb(57, 57, 57)',
+              'border-left': '2px solid rgb(57, 57, 57)'
+           })
+          
+          }
+           else if(data.currentConditions.icon=="partly-cloudy-night"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/cloudy-night.jpg")',
+           })
+           $(".city-name").css({
+              'color' : 'white',
+           })
+           $(".current-temp").css({
+              'color' : 'white',
+           })
+           $(".current-detail").css({
+              'color' : 'white',
+              'border-left': '2px solid white'
+           })
+           $(".today-heading").css({
+              'color' : 'white',
+           })
+           $(".today-weather").css({
+              'color' : 'white',
+           })
+           $(".border-botom").css({
+            'border-bottom': '4px solid white'
+           })
+           $(".week-heading").css({
+              'color' : 'white',
+           })
+           $(".border-bot").css({
+              'border-bottom': '4px solid white',
+           })
+           $(".week-days").css({
+            'color' : 'white',
+           })
+           $(".select").css({
+            'color' : 'white',
+           })
+
+          }
+           else if((data.currentConditions.icon=="rain")||(data.currentConditions.icon=="showers-day")){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/rain-stoppers-day.jpg")',
+           });
+           $(".week-days").css({
+              'color' : 'whitesmoke',
+           })
+           $(".today-weather").css({
+              'color' : 'whitesmoke',
+           })
+           $(".city-name").css({
+              'color' : 'white',
+           })
+           $(".current-temp").css({
+              'color' : 'white',
+           })
+           $(".current-detail").css({
+              'color' : 'white',
+              'border-left': '2px solid white'
+           })
+          }
+          else if((data.currentConditions.icon=="rain-snow")||(data.currentConditions.icon=="rain-snow-showers-day")||(data.currentConditions.icon=="snow")||(data.currentConditions.icon=="snow-showers-day")){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/snow-shower.jpg")',
+           })
+          }
+          else if((data.currentConditions.icon=="rain-snow-showers-night")||(data.currentConditions.icon=="snow-showers-night")){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/snow-showers-night.jpg")',
+           })
+          
+          }
+          else if(data.currentConditions.icon=="rain-showers-night"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/rain-showers-night.jpg")',
+           })
+          
+
+          }
+          else if((data.currentConditions.icon=="thunder")||(data.currentConditions.icon=="thunder-rain")||(data.currentConditions.icon=="thunder-showers-night")){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/thunder.jpg")',
+           })
+         
+          }
+          else if(data.currentConditions.icon=="thunder-showers-day"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/thunder-day.jpg")',
+           })
+
+          }
+          else if(data.currentConditions.icon=="wind"){
+           $(".main").css({
+            'background-image' : 'url("./images/background-img/wind-1.jpg")',
+           })
+           $(".city-name").css({
+              'color' : 'rgb(210, 178, 120)',
+           })
+           $(".current-temp").css({
+              'color' : 'rgb(210, 178, 120)',
+           })
+           $(".current-detail").css({
+              'color' : 'rgb(210, 178, 120)',
+              'border-left': '2px solid rgb(210, 178, 120)'
+           })
+           $(".today-heading").css({
+              'color' : 'wheat',
+           })
+           $(".today-weather").css({
+              'color' : 'wheat',
+           })
+           $(".border-botom").css({
+            'border-bottom': '4px solid wheat'
+           })
+           $(".week-heading").css({
+              'color' : 'wheat',
+           })
+           $(".border-bot").css({
+              'border-bottom': '4px solid wheat',
+           })
+           $(".week-days").css({
+            'color' : 'rgb(210, 178, 120)',
+           })
+           $(".select").css({
+            'color' : 'rgb(210, 178, 120)',
+           })
+
+          }
+          else
+          {
+            $(".main").css({
+            'background-image' : 'url("./images/background-img/else.jpg")',
+           })
+          }
+
+          },
+     }); 
+   }
+      
+
+     // get days from date function //
+     function getDayName(date){
+         var day = new Date(date);
+         var days = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
+         return days[day.getDay()];
+         }
+    
+            
+      
+</script>
+
+
+
+</body>
+</html>

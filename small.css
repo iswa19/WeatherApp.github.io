@@ -1,0 +1,154 @@
+@media screen and (max-width:360px){
+    body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    } 
+    .main{
+        background-image: url("./images/background-img/sky.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 20px;
+    }
+    .nav-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+     
+        padding-top: 20px;
+    }
+    #logo-icon{
+        width: 150px;
+        height: 50px;
+    }
+    .search{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .search-box{
+        width: 300px;
+        height: 30px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+        color: white;
+        outline: 0;
+        border: 0;
+    }
+    .search-icon{
+        height: 30px;
+        text-align: center;
+        outline: 0;
+        border: 0;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+        color: white;
+    }
+    .city-name{
+        color: white;
+        font-size: 14px;
+        text-align:left;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    .current{
+        animation-delay: 1s;
+        animation-name: fadeInDown;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    #current-icn{
+        width: 60px;
+        height: 60px;
+    }
+    .current-temp{
+        color: white;
+        font-size:18px;
+        text-align: center;
+    }
+    .current-detail{
+       display: none;
+    }
+    .today{
+        display: none;
+    }
+    .week-days{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 130px;
+        margin-left: 20px;
+        margin-right: 20px;
+        color: white;
+        margin-top: 30px;
+        font-size: 12px;
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+    }
+    .week-days:hover{
+        box-shadow: 0 0 90px 10px rgba(0, 0, 0, 0.25);
+        background-color:  rgba(270, 270, 270, 0.60);
+    }
+    .week-heading{
+        font-size: 12px;
+        color: white;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        margin-top: 50px;
+        animation-delay: 1s;
+        animation-name: fadeInRight;
+        animation-duration: 2s;
+        animation-fill-mode: both; 
+    }
+    .border-bot{
+        border-bottom: 4px solid white;
+        width: 150px;
+        position: relative;
+        top: -15px;
+    }
+     /*==== FADE IN RIGHT ===*/
+     @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translate3d(100%, 0, 0);
+        }
+      
+        to {
+          opacity: 1;
+          transform: none;
+        }
+         }
+        /*=== FADE IN DOWN ===*/
+        @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+
+
+    
+}
